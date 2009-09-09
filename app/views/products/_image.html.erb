@@ -1,0 +1,54 @@
+<% if image %> 
+  <%= image_tag image.attachment.url(:product) %>
+<% else %>
+  <%= link_to(product_image(@product), product_image_path(@product, :original), :class => 'zoomable') %>
+<% end %>
+
+<% content_for :head do -%>
+  <%= javascript_include_tag 'jquery.jqzoom/jquery.jqzoom1.0.1.js' %>
+  <%= stylesheet_link_tag 'jqzoom.css' %>
+  <%= stylesheet_link_tag 'jqzoom.custom.css' %>
+  <% javascript_tag do -%>
+    function zoomOptions() {
+      return {zoomWidth: 240, zoomHeight: 240, title: false, showPreload: false};
+    }
+    // Remove existing zoom events, this stops the jqzoom event handlers from
+    // accumulating each time a new image is selected.
+    function clearZoom() {
+      $('.zoomable').unbind();
+    }
+    function zoomIsFor() {
+      return $('#main-image').data('zoomIsFor');
+    }
+    function isZoomInitialized() {
+      pathZoomIsFor = zoomIsFor();
+      return undefined != pathZoomIsFor && '' != pathZoomIsFor;
+    }
+    function hasThumbnails() {
+      return $('ul.thumbnails li').length > 0
+    }
+    function setupZoom() {
+      if (hasThumbnails() && isZoomInitialized()) {
+        // Getting the selected thumbnail works for both variant and no variant
+        // thumbnail scenarios.
+        selectedImagePath = $('ul.thumbnails li.selected a').attr('href');
+      } else {
+        selectedImagePath = $("#main-image img").attr('src');
+      }
+      if (zoomIsFor() != selectedImagePath) {
+        // The zoom needs setting up for the selected image. Thumbnail hovers
+        // will not pass this test which is what we want.
+        clearZoom();
+        originalImagePath = selectedImagePath.replace('/product/', '/original/');
+        $("#main-image a").attr('href', originalImagePath);
+        $('#main-image').data('zoomIsFor', selectedImagePath);
+        $('.zoomable').jqzoom(zoomOptions());
+      }
+    }
+    $(document).ready(function() {
+      setupZoom();
+      // Event handler called whenever the main image changes.
+      $("#main-image img").bind("load", setupZoom);
+    });
+  <% end -%>
+<% end -%>
