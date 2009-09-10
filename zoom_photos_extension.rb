@@ -5,6 +5,11 @@ class ZoomPhotosExtension < Spree::Extension
 
   def activate
     
+    # Add an extra large (xl) size to use for zooming.
+    Image.attachment_definitions[:attachment][:styles] = 
+      { :mini => '48x48>', :small => '100x100>', :product => '240x240>', 
+        :large => '600x600>', :xl => '1200x1200>' }
+    
     Spree::BaseHelper.class_eval do
       
       # image_style will typically be one of :mini, :small, :product, :large, :original
