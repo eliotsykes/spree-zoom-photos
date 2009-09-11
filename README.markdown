@@ -40,7 +40,7 @@ Best regards,
 Eliot Sykes
 
 [http://github.com/eliotsykes/spree-zoom-photos](http://github.com/eliotsykes/spree-zoom-photos)   
-[http://blog.eliotsykes.com/](http://github.com/eliotsykes/spree-zoom-photos)
+[http://blog.eliotsykes.com/](http://blog.eliotsykes.com/)
 
 ### TODO ###
 
