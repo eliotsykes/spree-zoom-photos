@@ -39,10 +39,11 @@ Best regards,
 
 Eliot Sykes
 
-[http://github.com/eliotsykes/spree-zoom-photos](http://github.com/eliotsykes/spree-zoom-photos)  
+[http://github.com/eliotsykes/spree-zoom-photos](http://github.com/eliotsykes/spree-zoom-photos)   
 [http://blog.eliotsykes.com/](http://github.com/eliotsykes/spree-zoom-photos)
 
 ### TODO ###
-* Make javascript OO (candidate classes: ImageControls, ZoomControl, EnlargeControl)
-* Only enable image controls if the product has the large and xl image sizes required.
+
+*   Make javascript OO (candidate classes: ImageControls, ZoomControl, EnlargeControl)
+*   Only enable image controls if the product has the large and xl image sizes required
 
