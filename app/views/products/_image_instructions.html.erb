@@ -1,0 +1,6 @@
+</div><%# Hack to end main-image div early %>
+<p class="image-instructions">
+  <%= t('zoom_photos.zoom.instruction') %><br />
+  <%= link_to(t('zoom_photos.enlarge.instruction'), product_image_path(@product, :large), :class => 'enlargeable') %>
+</p>
+<div><%# Open div is a hack to match the closing tag in the calling template %>

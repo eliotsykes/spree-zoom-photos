@@ -1,0 +1,8 @@
+---
+en-US:
+  zoom_photos:
+    zoom:
+      instruction: Move over image to magnify
+      loading: Loading zoom
+    enlarge:
+      instruction: See larger image
