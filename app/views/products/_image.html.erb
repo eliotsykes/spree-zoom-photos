@@ -1,8 +1,15 @@
 <% if image %> 
   <%= image_tag image.attachment.url(:product) %>
 <% else %>
-  <%= link_to(product_image(@product), product_image_path(@product, :xl), :class => 'zoomable') %>
+  <% if image_controls.enable_zoom? %>
+    <%= link_to(product_image(@product), product_image_path(@product, :xl), :class => 'zoomable') %>
+  <% else %>
+    <%= product_image(@product) %>
+  <% end %>
   <%= render :partial => 'image_instructions' %>
 <% end %>
-<%= render :partial => 'zoom_photos_style' %>
-<%= render :partial => 'zoom_photos_js' %>
+
+<% if image_controls.enable_any? %>
+  <%= render :partial => 'zoom_photos_style' %>
+  <%= render :partial => 'zoom_photos_js' %>
+<% end %>

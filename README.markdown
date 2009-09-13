@@ -45,5 +45,7 @@ Eliot Sykes
 ### TODO ###
 
 *   Make javascript OO (candidate classes: ImageControls, ZoomControl, EnlargeControl)
-*   Only enable image controls if the product has the large and xl image sizes required
+*   Make image controls smarter - enable/disable per image, not per product.  Suggest
+    putting an available images array in javascript.  Will allow removal of the
+    ZoomPhotos::ImageControl ruby class.
 

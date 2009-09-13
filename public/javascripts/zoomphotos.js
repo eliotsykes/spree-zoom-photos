@@ -51,5 +51,3 @@ $(document).ready(function() {
   // Event handler called whenever the main product image changes.
   $("#main-image img").bind("load", setupImageViews);
 });
-
-
