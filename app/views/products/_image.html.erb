@@ -2,7 +2,8 @@
   <%= image_tag image.attachment.url(:product) %>
 <% else %>
   <% if image_controls.enable_zoom? %>
-    <%= link_to(product_image(@product), product_image_path(@product, :xl), :class => 'zoomable') %>
+    <%= link_to(product_image(@product), product_image_path(@product, :xl),
+        :id => 'zoomer', :class => 'MagicZoom', :rel => zoom_options) %>
   <% else %>
     <%= product_image(@product) %>
   <% end %>

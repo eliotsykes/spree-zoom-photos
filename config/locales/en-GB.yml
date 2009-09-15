@@ -1,8 +1,8 @@
 ---
 en-GB:
   zoom_photos:
-    zoom:
-      instruction: Move over image to magnify
-      loading: Loading zoom
-    enlarge:
-      instruction: See larger image
+    loading: Loading zoom...
+    instruction:
+      zoom_and_enlarge: Mouseover to zoom or click to enlarge
+      zoom: Mouseover to zoom
+      enlarge: Click to enlarge

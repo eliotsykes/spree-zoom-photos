@@ -19,19 +19,20 @@ who's name I'd love to know so I can put it here.
 [Demos of Fancy box](http://fancybox.net/example)
 (these demos are not in a Spree app).
 
-The zoom is done with the
-[jqzoom evolution jquery plugin](http://www.mind-projects.it/projects/jqzoom/)
-(version 1.0.1) courtesy of Renzi Marco, many thanks.
+The zoom is done with [MagicZoom](http://www.magictoolbox.com/magiczoom/).  If you
+want to use zoom you'll want to get a license from MagicToolbox and put the javascript and css
+files into your app, the files are *not* included in this extension. I looked
+into free zoom scripts however MagicZoom suited my needs best and was easiest to integrate.
+Thanks to MagicToolbox for providing a great tool.
 
-[Demos of jqzoom](http://www.mind-projects.it/projects/jqzoom/demos.php)
+[Demos of MagicZoom](http://www.magictoolbox.com/magiczoom_examples/)
 (these demos are not in a Spree app).
 
 The extension has a blank zoomphotos.css file that you may want to override in
-your own extension to customise the styling for fancybox and jqzoom.
+your own extension to customise the styling.
 
-The extension has extension points where you can override the defaults easily
-enough by overriding the default partial templates. If you'd like another
-extension point send me a github pull request with it in.
+There are extension points where you can override the defaults of this extension easily.
+If you'd like another extension point send me a github pull request with it in.
 
 Contributions, bug reports, feature requests welcome.
 
@@ -48,4 +49,6 @@ Eliot Sykes
 *   Make image controls smarter - enable/disable per image, not per product.  Suggest
     putting an available images array in javascript.  Will allow removal of the
     ZoomPhotos::ImageControl ruby class.
+*   Possibly use ImgZoom instead of FancyBox http://odyniec.net/projects/imgzoom/ and
+    consider making image instruction contain no links.
 

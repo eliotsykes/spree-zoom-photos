@@ -27,6 +27,13 @@ class ZoomPhotosExtension < Spree::Extension
       def image_controls
         @image_controls ||= ZoomPhotos::ImageControls.new(@product)
       end
+      
+      # Override this method if you want to set customise the zoom options.
+      # Available options: http://www.magictoolbox.com/magiczoom_integration/
+      def zoom_options
+        "zoom-distance:20px; zoom-width:350px; zoom-height:350px;
+        loading-msg:#{t('zoom_photos.loading')}"
+      end
     end
     
     Product.class_eval do

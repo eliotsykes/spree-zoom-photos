@@ -1,9 +1,6 @@
 <% content_for :head do -%>
   <%= javascript_include_tag 'jquery.fancybox/jquery.fancybox-1.2.1.js' %>
   <%= javascript_include_tag 'jquery.easing.1.3.js' %>
-  <%= javascript_include_tag 'jquery.jqzoom/jquery.jqzoom1.0.1.js' %>
-  <% javascript_tag do -%>
-    var zoomOptions = <%= render :partial => 'zoom_options' %>;
-  <% end -%>
+  <%= javascript_include_tag 'magiczoom/mz-packed.js' %>
   <%= javascript_include_tag 'zoomphotos.js' %>
 <% end -%>
