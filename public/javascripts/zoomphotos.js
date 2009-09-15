@@ -2,27 +2,29 @@ function hasThumbnails() {
   return $('ul.thumbnails li').length > 0
 }
 function getSelectedImagePath() {
-  if (hasThumbnails()) {
-    // Getting the selected thumbnail works for both variant and no variant
-    // thumbnail scenarios.
-    return $('ul.thumbnails li.selected a').attr('href');
-  }
   return $("#main-image img").attr('src');    
 }
-function updateImageViews() {
+function checkAndUpdateImageViews() {
   selectedImagePath = getSelectedImagePath();
   largeImagePath = selectedImagePath.replace('/product/', '/large/');
+  enlargeControl = $("a.enlargeable");
+  if (enlargeControl.attr('href') != largeImagePath) {
+    enlargeControl.attr('href', largeImagePath);
+  }
   xlImagePath = selectedImagePath.replace('/product/', '/xl/');
-  $("a.enlargeable").attr('href', largeImagePath);
-  $("#zoomer").attr('href', xlImagePath);
-  // Delay running refresh as fails if we don't.
-  setTimeout(MagicZoom.refresh,500);
+  zoomControl = $("#zoomer");
+  if (zoomControl.attr('href') != xlImagePath) {
+    MagicZoom.update(document.getElementById("zoomer"), xlImagePath, selectedImagePath, 'show-title: false');
+  }
 }
 function initImageViews() {
   $("a.enlargeable").fancybox();
 }
 $(document).ready(function() {
   initImageViews();
-  // Event handler called whenever the main product image changes.
-  $("#main-image img").bind("load", updateImageViews);
+  if (hasThumbnails()) {
+    // Check if the image has changed every 0.5sec, this is more reliable
+    // than checking the load image event which isn't reliable in some browsers.
+    setInterval(checkAndUpdateImageViews, 500);
+  }
 });
