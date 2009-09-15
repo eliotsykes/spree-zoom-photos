@@ -28,7 +28,7 @@ Thanks to MagicToolbox for providing a great tool.
 [Demos of MagicZoom](http://www.magictoolbox.com/magiczoom_examples/)
 (these demos are not in a Spree app).
 
-The extension has a blank zoomphotos.css file that you may want to override in
+The extension has a blank zoomphotos-custom.css file that you may want to override in
 your own extension to customise the styling.
 
 There are extension points where you can override the defaults of this extension easily.

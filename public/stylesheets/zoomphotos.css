@@ -1,0 +1,8 @@
+/* CSS fixes to stop image from jumping up the screen when magiczoom enabled */
+#product-images #main-image {
+  position: static;
+}
+
+#product-images #main-image img {
+  position: static;
+}
