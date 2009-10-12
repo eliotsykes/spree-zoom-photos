@@ -28,6 +28,12 @@ Thanks to MagicToolbox for providing a great tool.
 [Demos of MagicZoom](http://www.magictoolbox.com/magiczoom_examples/)
 (these demos are not in a Spree app).
 
+The extension includes sample large and extra large images for the Rails Tote
+bag found in the spree core sample data.  After loading the sample data (with
+rake db:sample or rake db:bootstrap) you can look at the Rails Tote bag in the
+shop to see how this extension works:   
+[http://localhost:3000/products/ruby-on-rails-tote](http://localhost:3000/products/ruby-on-rails-tote)
+
 The extension has a blank zoomphotos-custom.css file that you may want to override in
 your own extension to customise the styling.
 
